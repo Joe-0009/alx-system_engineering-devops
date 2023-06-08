@@ -1,0 +1,2 @@
+#!/bin/bach
+chmod ug-wrx o+rwx hello
