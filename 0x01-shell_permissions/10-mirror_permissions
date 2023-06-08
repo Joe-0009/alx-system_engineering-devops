@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod --reference=olleh.list hello.list
+chmod --reference=olleh hello
