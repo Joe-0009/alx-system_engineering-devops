@@ -1,2 +1,2 @@
 #!/bin/bash
-echo 1-confused_smiley 2-hellofile
+cat /etc/passwd /etc/hosts
