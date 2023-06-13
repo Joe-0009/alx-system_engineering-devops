@@ -1,2 +1,2 @@
 #!/bin/bash
-env | tr ";" "\n" | wc -l
+env | tr ":" "\n" | wc -l
