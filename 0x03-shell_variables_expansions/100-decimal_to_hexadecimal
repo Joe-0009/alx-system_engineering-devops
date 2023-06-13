@@ -1,1 +1,2 @@
-fmf
+#!/bin/bash
+printf "%x\n" $DECIMAL
