@@ -1,22 +1,23 @@
 #!/usr/bin/python3
-'''
-    This module contains the function top_ten
-'''
+"""
+queries the Reddit API
+returns the number of subscribers for a given subreddit
+"""
 import requests
 
 
-def top_ten(subreddit):
-    """Queries the Reddit API and prints the titles of the first 10 hot posts."""
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
-    headers = {'User-Agent': 'python:top_ten:v1.0 (by /u/yourusername)'}
-    params = {'limit': 10}
-
-    response = requests.get(url, headers=headers, params=params, allow_redirects=False)
-
+def number_of_subscribers(subreddit):
+    """
+    function that return the number of subscribers
+    """
+    url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
+    headers = {
+        "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/Curious_Salt3631)"
+    }
+    response = requests.get(url, headers=headers,
+                            allow_redirects=False)
     if response.status_code == 200:
         data = response.json()
-        posts = data['data']['children']
-        for post in posts:
-            print(post['data']['title'])
+        return data.get('data').get('subscribers')
     else:
-        print(None)
+        return 0
